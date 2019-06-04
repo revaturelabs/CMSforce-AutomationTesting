@@ -1,0 +1,1 @@
+This repository houses the automation tests for the CMSforce application
