@@ -24,7 +24,7 @@ public class SearchContentSteps {
 	
 	@Given("^The user is on the search content page$")
 	public void the_user_is_on_the_search_content_page() throws Throwable {
-		driver.get("http://wikipedia.org");
+		driver.get("http://localhost:4200/finder");
 	}
 
 	@When("^The user clicks on the search button$")
