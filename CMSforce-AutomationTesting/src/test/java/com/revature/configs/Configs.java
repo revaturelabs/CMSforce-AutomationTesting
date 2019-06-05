@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.revature.pages.SearchPage;
+
 @Configuration
 public class Configs {
 
@@ -16,5 +18,10 @@ public class Configs {
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		ChromeDriver driver = new ChromeDriver();		
 		return driver;
+	}
+	
+	@Bean
+	public SearchPage searchPage() {
+		return new SearchPage(CMSforceDriver());
 	}
 }

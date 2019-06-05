@@ -3,23 +3,22 @@ package com.revature.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SearchPage {
-	@Autowired
-	@Qualifier("CMSforceDriver")
-	WebDriver driver;
 
-	public SearchPage() {
-		super();
+	public final WebDriver driver;
+	
+
+	public SearchPage(WebDriver driver){
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
-//	public SearchPage(WebDriver driver){
-//		this.webdriver = driver;
-//		PageFactory.initElements(driver, this);
-//	}
+	
 	@FindBy(id="submitbutton")
 	public WebElement submit;
 	
