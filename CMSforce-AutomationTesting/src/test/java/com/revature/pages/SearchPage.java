@@ -25,13 +25,16 @@ public class SearchPage {
 	@FindBy(name="title")
 	public WebElement title;
 	
-	@FindBy(id="code")
+	@FindBy(className="btn-radio")
+	public WebElement radio;
+	
+	@FindBy(xpath="/html/body/app-root/app-content-finder-page/div[1]/div/form/div[1]/div[3]/div/div[1]")
 	public WebElement code;
 	
-	@FindBy(id="document")
+	@FindBy(xpath="/html/body/app-root/app-content-finder-page/div[1]/div/form/div[1]/div[3]/div/div[2]")
 	public WebElement doc;
 	
-	@FindBy(id="all")
+	@FindBy(xpath="/html/body/app-root/app-content-finder-page/div[1]/div/form/div[1]/div[3]/div/div[3]")
 	public WebElement all;
 	
 	@FindBy(className = "table-responsive")

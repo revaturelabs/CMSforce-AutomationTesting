@@ -1,6 +1,7 @@
 package com.revature.configs;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +17,8 @@ public class Configs {
 	public WebDriver CMSforceDriver() {
 		File file = new File("src/main/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-		ChromeDriver driver = new ChromeDriver();		
+		ChromeDriver driver = new ChromeDriver();	
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		return driver;
 	}
 	
