@@ -28,32 +28,19 @@ public class SearchPage {
 	@FindBy(className="btn-radio")
 	public WebElement radio;
 	
-	@FindBy(xpath="/html/body/app-root/app-content-finder-page/div[1]/div/form/div[1]/div[3]/div/div[1]")
+	@FindBy(id="CodeLabel")
 	public WebElement code;
 	
-	@FindBy(xpath="/html/body/app-root/app-content-finder-page/div[1]/div/form/div[1]/div[3]/div/div[2]")
+	@FindBy(id="DocumentLabel")
 	public WebElement doc;
 	
-	@FindBy(xpath="/html/body/app-root/app-content-finder-page/div[1]/div/form/div[1]/div[3]/div/div[3]")
+	@FindBy(id="AllLabel")
 	public WebElement all;
 	
-	@FindBy(className = "table-responsive")
+	@FindBy(id = "ResultsTable")
 	public WebElement tableResults;
-//	@FindBy(id="js-link-box-en")
-//	public WebElement english;
-//
-//	@FindBy(partialLinkText = "Deutsch")
-//	public WebElement german;
-//	
-//	@FindBy(css = "div[lang='es']")
-//	public WebElement spanish;
-//	
-//	@FindBy(xpath = "//*[@id=\"js-link-box-fr\"]/strong")
-//	public WebElement french;
-//	
-//	@FindBy(className = "pure-button-primary-progressive")
-//	public WebElement searchbtn;
-//	
-//	@FindBy(name="search")
-//	public WebElement searchbar;
+
+	@FindBy(xpath="/html/body/app-root/app-content-finder-page/div/div/form/div[2]/div[2]/ng-select/div/div/div[2]/input")
+	public WebElement subjectDropDown;
+	
 }

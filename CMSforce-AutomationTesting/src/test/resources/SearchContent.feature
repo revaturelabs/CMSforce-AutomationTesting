@@ -7,26 +7,27 @@ Feature: Search for subject
 	Scenario: Searching All
 		When The user clicks on the all radio button
 		When The user clicks on search button
-		Then All contents from the database should be returned
+		Then Contents from the database should be returned
 
-#
-#	Scenario: Searching by title and format only
-#		When The user types title into the search bar
-#		When The user selects a format radio button
-#		When The user clicks on search button
-#		Then The result should be "<contentID>"
-#		
-##		Examples:
-##		|title|format|contentID|
-#	
-#	Scenario: Searching by module only
-#		When The user selects a list of modules
-#		When The user clicks on search button
-#		Then The result should be "<contentID>"
-#		
-#	Scenario: Searching with all fields
-#		When The user types "<title>" into the search bar
-#		When The user selects a "<format>" radio button
-#		When The user selects a list of modules
-#		When The user clicks on search button
-#		Then The result should be "<contentID>"
+	Scenario Outline: Searching by title and format only
+		When The user types a "<title>" into the search bar
+		When The user clicks on the code radio button
+		When The user clicks on search button
+		Then Contents from the database should be returned
+		
+		Examples:
+		|title|
+		|CMS|
+	
+	Scenario: Searching by module only
+		When The user clicks on the all radio button
+		When The user selects a list of modules
+		When The user clicks on search button
+		Then Contents from the database should be returned
+		
+	Scenario: Searching with all fields
+		When The user types a title into the search bar
+		When The user clicks on the all radio button
+		When The user selects a list of modules
+		When The user clicks on search button
+		Then Contents from the database should be returned

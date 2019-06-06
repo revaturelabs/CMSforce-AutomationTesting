@@ -2,7 +2,9 @@ package com.revature.steps;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.AfterClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -41,8 +43,41 @@ public class SearchContentSteps {
 	}
 
 
-	@Then("^All contents from the database should be returned$")
+	@Then("^Contents from the database should be returned$")
 	public void all_contents_from_the_database_should_be_returned() throws Throwable {
-		Assert.assertTrue(driver.findElement(By.id("headerRow")) != null);
+		Assert.assertTrue(driver.findElement(By.id("ResultsTable")) != null);
+	}
+	
+	@When("^The user types a title into the search bar$")
+	public void the_user_types_a_title_into_the_search_bar() throws Throwable {
+	    search.title.sendKeys("CMS");
+	}
+	
+	@When("^The user types a \"([^\"]*)\" into the search bar$")
+	public void the_user_types_a_into_the_search_bar(String arg1) throws Throwable {
+	    search.title.sendKeys(arg1);
+	}
+
+	@When("^The user clicks on the code radio button$")
+	public void the_user_clicks_on_the_code_radio_button() throws Throwable {
+	    search.code.click();
+	}
+
+	@When("^The user selects a list of modules$")
+	public void the_user_selects_a_list_of_modules() throws Throwable {
+	    search.subjectDropDown.click();
+	    search.subjectDropDown.sendKeys("Angular");
+	    search.subjectDropDown.sendKeys(Keys.ENTER);
+	}
+
+	@When("^The user selects a all radio button$")
+	public void the_user_selects_a_all_radio_button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+	
+	@AfterClass
+	public void teardown() {
+		driver.close();
 	}
 }
