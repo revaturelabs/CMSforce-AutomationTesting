@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -37,5 +38,10 @@ public class Configs {
 	@Bean
 	public ContentCreationPage contentPage() {
 		return new ContentCreationPage(CMSforceDriver());
+	}
+	
+	@Bean
+	public Actions actions(){
+		return new Actions(CMSforceDriver());
 	}
 }

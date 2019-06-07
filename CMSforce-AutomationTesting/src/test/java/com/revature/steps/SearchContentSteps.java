@@ -6,6 +6,7 @@ import org.junit.AfterClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -20,6 +21,8 @@ import junit.framework.Assert;
 
 public class SearchContentSteps {
 	
+	@Autowired
+	Actions actions;
 	
 	@Autowired
 	WebDriver driver;
@@ -65,16 +68,14 @@ public class SearchContentSteps {
 
 	@When("^The user selects a list of modules$")
 	public void the_user_selects_a_list_of_modules() throws Throwable {
-	    search.subjectDropDown.click();
-	    search.subjectDropDown.sendKeys("Angular");
-	    search.subjectDropDown.sendKeys(Keys.ENTER);
+	    
+		search.subjectDropDown.click();
+		actions.sendKeys("Angular");
+		actions.perform();
+		actions.sendKeys(Keys.ENTER);
+		actions.perform();
 	}
 
-	@When("^The user selects a all radio button$")
-	public void the_user_selects_a_all_radio_button() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
-	}
 	
 	@AfterClass
 	public void teardown() {

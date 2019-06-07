@@ -18,5 +18,25 @@ public class ContentCreationPage {
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(id="titleTextBox")
+	public WebElement titleTextBox;
+	
+	@FindBy(id="urlTextBox")
+	public WebElement urlTextBox;
+	
+	@FindBy(id="subjectDropDown")
+	public WebElement subjectDropDown;
+	
+	@FindBy(name="description")
+	public WebElement descriptionTextBox;
+	
+	@FindBy(id="CodeRadioButton")
+	public WebElement codeRadioButton;
+	
+	@FindBy(id="DocumentRadioButton")
+	public WebElement documentRadioButton;
+	
+	@FindBy(id="submitButton")
+	public WebElement submitButton;
 
 }

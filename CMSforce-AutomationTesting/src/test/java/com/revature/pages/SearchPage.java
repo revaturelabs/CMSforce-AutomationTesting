@@ -40,7 +40,7 @@ public class SearchPage {
 	@FindBy(id = "ResultsTable")
 	public WebElement tableResults;
 
-	@FindBy(xpath="/html/body/app-root/app-content-finder-page/div/div/form/div[2]/div[2]/ng-select/div/div/div[2]/input")
+	@FindBy(id="subjectDropDown")
 	public WebElement subjectDropDown;
 	
 }
