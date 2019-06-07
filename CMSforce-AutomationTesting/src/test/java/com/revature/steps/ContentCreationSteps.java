@@ -80,5 +80,8 @@ public class ContentCreationSteps {
 		alert.accept();
 	}
 
-	
+	@AfterClass
+	public void teardown() {
+		driver.close();
+	}
 }
