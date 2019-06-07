@@ -86,4 +86,9 @@ public class ModuleCreationSteps {
 	}
 	return builder.toString();
 	}
+	
+	@AfterClass
+	public void teardownmod() {
+		driver.close();
+	}
 }
