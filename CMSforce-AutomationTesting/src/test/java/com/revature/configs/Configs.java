@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.revature.pages.ContentCreationPage;
+import com.revature.pages.ModuleCreationPage;
 import com.revature.pages.SearchPage;
 
 @Configuration
@@ -25,5 +27,15 @@ public class Configs {
 	@Bean
 	public SearchPage searchPage() {
 		return new SearchPage(CMSforceDriver());
+	}
+	
+	@Bean
+	public ModuleCreationPage modulePage() {
+		return new ModuleCreationPage(CMSforceDriver());
+	}
+	
+	@Bean
+	public ContentCreationPage contentPage() {
+		return new ContentCreationPage(CMSforceDriver());
 	}
 }
