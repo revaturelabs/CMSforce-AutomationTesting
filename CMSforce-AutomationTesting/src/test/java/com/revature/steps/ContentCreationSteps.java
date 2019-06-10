@@ -32,7 +32,7 @@ public class ContentCreationSteps {
 
 	@Given("^The user is on the CMSforce home/create page$")
 	public void the_user_is_on_the_CMSforce_home_create_page() throws Throwable {
-		driver.get("http://localhost:4200/content-creator");
+		driver.get("http://cmsforceangular.s3-website.us-east-2.amazonaws.com/content-creator");
 	}
 
 	@When("^The user enters a title$")

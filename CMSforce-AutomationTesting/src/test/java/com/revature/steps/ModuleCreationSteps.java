@@ -28,7 +28,7 @@ public class ModuleCreationSteps {
 	
 	@Given("^The user is on the CMSforce module-creator page$")
 	public void the_user_is_on_the_CMSforce_module_creator_page() throws Throwable {
-		driver.get("http://localhost:4200/module-creator");
+		driver.get("http://cmsforceangular.s3-website.us-east-2.amazonaws.com/module-creator");
 	}
 
 	@When("^The user enters a string for the module$")
