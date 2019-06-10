@@ -37,7 +37,7 @@ public class SearchContentSteps {
 
 	@Given("^The user is on the CMSforce finder page$")
 	public void the_user_is_on_the_CMSforce_finder_page() throws Throwable {
-		driver.get("http://localhost:4200/finder");
+		driver.get("http://cmsforceangular.s3-website.us-east-2.amazonaws.com/finder");
 	}
 	
 	@When("^The user clicks on the all radio button$")
