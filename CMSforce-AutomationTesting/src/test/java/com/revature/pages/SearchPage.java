@@ -19,7 +19,7 @@ public class SearchPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="submitbutton")
+	@FindBy(id="submitButton")
 	public WebElement submit;
 	
 	@FindBy(name="title")

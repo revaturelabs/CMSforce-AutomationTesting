@@ -3,9 +3,12 @@ package com.revature.configs;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -43,5 +46,10 @@ public class Configs {
 	@Bean
 	public Actions actions(){
 		return new Actions(CMSforceDriver());
+	}
+	
+	@Bean
+	public WebDriverWait webDriverWait() {
+		return new WebDriverWait(CMSforceDriver(), 10);
 	}
 }

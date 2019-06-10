@@ -3,6 +3,8 @@ package com.revature.steps;
 import org.junit.AfterClass;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.revature.pages.ModuleCreationPage;
@@ -15,6 +17,9 @@ import junit.framework.Assert;
 
 public class ModuleCreationSteps {
 
+	@Autowired
+	WebDriverWait wait;
+	
 	@Autowired
 	WebDriver driver;
 	
@@ -38,7 +43,7 @@ public class ModuleCreationSteps {
 
 	@Then("^The success alert should display$")
 	public void the_success_alert_should_display() throws Throwable {
-	    Thread.sleep(500);
+	    wait.until(ExpectedConditions.alertIsPresent());
 	    Alert alert = driver.switchTo().alert();
 	    Assert.assertEquals("Successfully sent module.", alert.getText());
 	    alert.accept();
@@ -46,6 +51,7 @@ public class ModuleCreationSteps {
 
 	@Then("^The error alert should display$")
 	public void the_error_alert_should_display() throws Throwable {
+		wait.until(ExpectedConditions.alertIsPresent());
 	    Alert alert = driver.switchTo().alert();
 	    Assert.assertEquals("Please fill in the input field!", alert.getText());	
 	    alert.accept();

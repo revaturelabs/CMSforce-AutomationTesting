@@ -9,15 +9,7 @@ Feature: Search for subject
 		When The user clicks on search button
 		Then Contents from the database should be returned
 
-	Scenario Outline: Searching by title and format only
-		When The user types a "<title>" into the search bar
-		When The user clicks on the code radio button
-		When The user clicks on search button
-		Then Contents from the database should be returned
-		
-		Examples:
-		|title|
-		|CMS|
+
 	
 	Scenario: Searching by module only
 		When The user clicks on the all radio button

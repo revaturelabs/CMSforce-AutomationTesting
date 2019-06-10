@@ -1,9 +1,12 @@
 package com.revature.steps;
 
+import org.junit.AfterClass;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.revature.pages.ContentCreationPage;
@@ -14,6 +17,9 @@ import cucumber.api.java.en.When;
 import junit.framework.Assert;
 
 public class ContentCreationSteps {
+	
+	@Autowired
+	WebDriverWait wait;
 	
 	@Autowired
 	Actions actions;
@@ -66,7 +72,7 @@ public class ContentCreationSteps {
 
 	@Then("^The successful creation alert should display$")
 	public void the_successful_creation_alert_should_display() throws Throwable {
-		Thread.sleep(500);
+		wait.until(ExpectedConditions.alertIsPresent());
 		Alert alert = driver.switchTo().alert();
 		Assert.assertEquals("Successfully sent content.", alert.getText());
 		alert.accept();
@@ -74,7 +80,7 @@ public class ContentCreationSteps {
 
 	@Then("^The error creating alert should display$")
 	public void the_error_creating_alert_should_display() throws Throwable {
-		Thread.sleep(500);
+		wait.until(ExpectedConditions.alertIsPresent());
 		Alert alert = driver.switchTo().alert();
 		Assert.assertEquals("Please fill in all input fields!", alert.getText());
 		alert.accept();

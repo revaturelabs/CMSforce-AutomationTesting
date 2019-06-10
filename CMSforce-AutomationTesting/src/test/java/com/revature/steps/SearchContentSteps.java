@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -20,6 +22,9 @@ import junit.framework.Assert;
 
 
 public class SearchContentSteps {
+	
+	@Autowired
+	WebDriverWait wait;
 	
 	@Autowired
 	Actions actions;
@@ -48,6 +53,7 @@ public class SearchContentSteps {
 
 	@Then("^Contents from the database should be returned$")
 	public void all_contents_from_the_database_should_be_returned() throws Throwable {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ResultsTable")));
 		Assert.assertTrue(driver.findElement(By.id("ResultsTable")) != null);
 	}
 	
